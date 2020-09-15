@@ -1,0 +1,302 @@
+# References:
+#  - Himawari-8/9 Himawari L1 Gridded Data User's Guide[https://www.eorc.jaxa.jp/ptree/userguide.html]
+
+reader:
+  name: ahi_l1b_nc
+  short_name: AHI L1
+  long_name: Himawari AHI Level 1b (Gridded)
+  description: Reader for the JMA Himawari AHI Level 1 data in NetCDF format
+  reader: !!python/name:satpy.readers.yaml_reader.GEOSegmentYAMLReader
+  sensors: [ahi]
+
+datasets:
+  latitude:
+    name: latitude
+    file_type: ahi_l1
+    units: "degrees_north"
+  longitude:
+    name: longitude
+    file_type: ahi_l1
+    units: "degrees_east"
+  band_id:
+    name: band_id
+    file_type: ahi_l1
+    units: "N/A"
+  start_time:
+    name: start_time
+    file_type: ahi_l1
+    units: "days since 1858-11-17 0:0:0"
+    standard_name: time
+  end_time: 
+    name: end_time
+    file_type: ahi_l1
+    units: "days since 1858-11-17 0:0:0"
+    standard_time: time
+  geometry_parameters:
+    name: geometry_parameters
+    file_type: ahi_l1
+    units: "degree, km or N/A"
+  albedo_01:
+    name: albedo_01
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 0.0001
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.01298
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'reflectance*cos(SOZ) of band 01'
+  albedo_02:
+    name: albedo_02
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 0.0001
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.012803
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'reflectance*cos(SOZ) of band 02'
+  albedo_03:
+    name: albedo_03
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 0.0001
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.017321
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'reflectance*cos(SOZ) of band 03'
+  sd_albedo_03:
+    name: sd_albedo_04
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 5e-5
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.017321
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'standard deviation of reflectance*cos(SOZ) of band 03 in 16 pixels' 
+  albedo_04:
+    name: albedo_04
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 0.0001
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.016294
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'reflectance*cos(SOZ) of band 04'
+  albedo_05:
+    name: albedo_05
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 0.0001
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.000692
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'reflectance*cos(SOZ) of band 05'
+  albedo_06:
+    name: albedo_06
+    file_type: ahi_l1
+    units: "1"
+    valid_min: 0
+    valid_max: 31400
+    scale_factor: 0.0001
+    add_offset: 0
+    missing_value: -32768
+    correction_factor: 1.000133
+    correction_offset: 0
+    coordinates: [latitude, longitude]
+    long_name: 'reflectance*cos(SOZ) of band 06'
+  tbb_07:
+    name: tbb_07
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 07'
+  tbb_08:
+    name: tbb_08
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 08'
+  tbb_08:
+    name: tbb_08
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 09'
+  tbb_09:
+    name: tbb_09
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 10'
+  tbb_11:
+    name: tbb_11
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 11'
+  tbb_12:
+    name: tbb_12
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 12'
+  tbb_13:
+    name: tbb_13
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 13'
+  tbb_14:
+    name: tbb_14
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 14'
+  tbb_15:
+    name: tbb_15
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 15'
+  tbb_16:
+    name: tbb_16
+    file_type: ahi_l1
+    units: "K"
+    valid_min: -27315
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 273.15
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'Brightness temperature of band 16'
+  SAZ:
+    name: SAZ
+    file_type: ahi_l1
+    units: "degrees"
+    valid_min: 0
+    valid_max: 9000
+    scale_factor: 0.01
+    add_offset: 0
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'satellite zenith angle'
+  SAA:
+    name: SAA
+    file_type: ahi_l1
+    units: "degrees"
+    valid_min: -18000
+    valid_max: 18000
+    scale_factor: 0.01
+    add_offset: 0
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'satellite azimuth angle'
+  SOZ:
+    name: SOZ
+    file_type: ahi_l1
+    units: "degrees"
+    valid_min: 0
+    valid_max: 18000
+    scale_factor: 0.01
+    add_offset: 0
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'solar zenith angle'
+  SOA:
+    name: SOA
+    file_type: ahi_l1
+    units: "degrees"
+    valid_min: -18000
+    valid_max: 18000
+    scale_factor: 0.01
+    add_offset: 0
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'solar azimuth angle'
+  Hour:
+    name: Hour
+    file_type: ahi_l1
+    units: "hours"
+    valid_min: -32767
+    valid_max: 32767
+    scale_factor: 0.01
+    add_offset: 0.004755807
+    missing_value: -32768
+    coordinates: [latitude, longitude]
+    long_name: 'observation hours(UT)'
+     
+file_types:
+  ahi_l1:
+    # Ex : NC_H08_20190401_0000_R21_FLDK.06001_06001.nc
+    file_reader: !!python/name:satpy.readers.ahi_l1_nc.AHIL1FileHandler
+    file_patterns: 
+        - 'NC_{platform_shortname:3s}_{start_time:%Y%m%d_%H%M}_{observation_type:3s}_FLDK.{pixel_number:05d}_{line_number:05d}.nc'
+
